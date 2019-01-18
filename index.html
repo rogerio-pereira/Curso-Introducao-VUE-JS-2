@@ -9,7 +9,8 @@
 </head>
 <body>
     <div id='app'>
-        <gui-titulo titulo='Esse é o título'></gui-titulo>
+        <gui-titulo v-bind:titulo='meuTitulo'></gui-titulo>
+        <input type='text' v-model='meuTitulo'>
     </div>
 
     <script>
@@ -20,6 +21,9 @@
 
         var app = new Vue({
             el:"#app",
+            data:{
+                meuTitulo:'Esse é o título'
+            }
         });
     </script>
 </body>
