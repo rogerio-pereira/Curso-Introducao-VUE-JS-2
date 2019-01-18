@@ -9,12 +9,13 @@
 </head>
 <body>
     <div id='app'>
-        <gui-titulo></gui-titulo>
+        <gui-titulo titulo='Esse é o título'></gui-titulo>
     </div>
 
     <script>
         Vue.component('gui-titulo', {
-            template:'<h2>Componente de título</h2>'
+            props:['titulo'],
+            template:'<h2>{{titulo}}</h2>'
         });
 
         var app = new Vue({
