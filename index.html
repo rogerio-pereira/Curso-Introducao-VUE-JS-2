@@ -9,46 +9,16 @@
 </head>
 <body>
     <div id='app'>
-        {{msg}}
-
-        <p v-bind:title='titulo'>Teste com title</p>
-
-        <p v-if="condicao">Teste com if</p>
-
-        <p v-for="registro in registros" :key="index">{{registro.titulo}}</p>
-
-        <button v-if="!clicou" v-on:click="usuarioClicou">Salvar</button>
-        <button v-if="clicou" v-on:click="usuarioClicou">Aguarde...</button>
-
-        <p><input type='text' v-model="usuario.nome"></p>
-        <p>nome: {{usuario.nome}}</p>
+        <gui-titulo></gui-titulo>
     </div>
 
     <script>
+        Vue.component('gui-titulo', {
+            template:'<h2>Componente de título</h2>'
+        });
+
         var app = new Vue({
             el:"#app",
-            data:{
-                msg:"Hello World - Iniciando com Vue.JS",
-                titulo:"Teste com v-bind",
-                condicao:false,
-                registros: [
-                    {titulo:"registro1"},
-                    {titulo:"registro2"},
-                    {titulo:"registro3"},
-                    {titulo:"registro4"},
-                    {titulo:"registro5"},
-                ],
-                clicou:false,
-                usuario:{
-                    nome:""
-                }
-            },
-            methods:{
-                usuarioClicou:function()
-                {
-                    this.clicou = !this.clicou; 
-                }
-            }
         });
     </script>
 </body>
