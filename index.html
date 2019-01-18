@@ -13,6 +13,10 @@
         <input type='text' v-model='meuTitulo'>
 
         <gui-tabela v-bind:titulos="['Titulo', 'Descrição', 'Link']" v-bind:registros='registros'></gui-tabela>
+
+        <p v-once>{{meuTitulo}}</p>
+
+        <p v-html="html"></p>
     </div>
 
     <script>
@@ -45,7 +49,8 @@
                     {titulo:'Titulo 1', descricao:'Descrição 1', link:'link 1'},
                     {titulo:'Titulo 2', descricao:'Descrição 2', link:'link 2'},
                     {titulo:'Titulo 3', descricao:'Descrição 3', link:'link 3'},
-                ]
+                ],
+                html:"<a href='#'>Esse é um link</a>"
             }
         });
     </script>
