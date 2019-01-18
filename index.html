@@ -19,6 +19,9 @@
 
         <button v-if="!clicou" v-on:click="usuarioClicou">Salvar</button>
         <button v-if="clicou" v-on:click="usuarioClicou">Aguarde...</button>
+
+        <p><input type='text' v-model="usuario.nome"></p>
+        <p>nome: {{usuario.nome}}</p>
     </div>
 
     <script>
@@ -35,7 +38,10 @@
                     {titulo:"registro4"},
                     {titulo:"registro5"},
                 ],
-                clicou:false
+                clicou:false,
+                usuario:{
+                    nome:""
+                }
             },
             methods:{
                 usuarioClicou:function()
