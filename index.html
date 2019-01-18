@@ -34,6 +34,22 @@
             <input type='checkbox' v-model='termos' id='aceitaTermos'/>
             <label for='aceitaTermos'>{{termos}}</label>
         </p>
+
+        <p>
+            Multiple Checkboxes: {{notificacoes}}
+        </p>
+        <p>
+            <input type='checkbox' v-model='notificacoes' id='receberEmail' value='email'/>
+            <label for='receberEmail'>E-mail</label>
+        </p>
+        <p>
+            <input type='checkbox' v-model='notificacoes' id='receberSMS' value='sms'/>
+            <label for='receberSMS'>SMS</label>
+        </p>
+        <p>
+            <input type='checkbox' v-model='notificacoes' id='receberLigacao' value='ligacao'/>
+            <label for='receberLigacao'>Ligação</label>
+        </p>
     </div>
 
     <script>
@@ -47,7 +63,8 @@
             data:{
                 texto:'',
                 textArea:'',
-                termos:true
+                termos:true,
+                notificacoes: []
             }
         });
     </script>
