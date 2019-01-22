@@ -83,6 +83,11 @@
                 <option>Preto</option> 
             </select>
         </p>
+
+        <p>
+            Lazy: {{busca}}
+            <input type="text" v-model.lazy='busca'>
+        </p>
     </div>
 
     <script>
@@ -100,7 +105,8 @@
                 notificacoes: [],
                 sexo: null,
                 ano: null,
-                cores: null
+                cores: null ,
+                busca: ''
             }
         });
     </script>
