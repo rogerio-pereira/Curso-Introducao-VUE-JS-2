@@ -50,6 +50,17 @@
             <input type='checkbox' v-model='notificacoes' id='receberLigacao' value='ligacao'/>
             <label for='receberLigacao'>Ligação</label>
         </p>
+
+        <p>
+            Radio: {{sexo}}
+        </p>
+        <p>
+            <input type='radio' v-model='sexo' id='masculino' value='M'/>
+            <label for='masculino'>Masculino</label><br/>
+        
+            <input type='radio' v-model='sexo' id='feminino' value='F'/>
+            <label for='feminino'>Feminino</label>
+        </p>
     </div>
 
     <script>
@@ -64,7 +75,8 @@
                 texto:'',
                 textArea:'',
                 termos:true,
-                notificacoes: []
+                notificacoes: [],
+                sexo: null
             }
         });
     </script>
