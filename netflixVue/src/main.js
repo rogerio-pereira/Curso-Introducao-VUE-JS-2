@@ -1,27 +1,24 @@
 import Vue from 'vue'
-//import App from './App.vue'
+import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
-Vue.use(VueResource)
 
+//import App from './App.vue'
 import Home from './paginas/Home.vue'
 const Contato = {template: '<p>Pagina de Contato</p>'}
 const SemPagina = {template: '<p>Esta página não existe!</p>'}
 
+Vue.use(VueResource)
+Vue.use(VueRouter)
 
-const rotas = {
-  '/': Home,
-  '/contato': Contato
-}
+const routes = [
+  { path: '/', component: Home },
+  { path: '/contato', component: Contato }
+]
 
-new Vue({
-  el: '#app',
-  data:{
-    rotaAtual: window.location.pathname
-  },
-  computed:{
-    exibeComponente() {
-      return rotas[this.rotaAtual] || SemPagina
-    }
-  },
-  render(h) {return h(this.exibeComponente)}
+const router = new VueRouter({
+  routes // short for `routes: routes`
 })
+
+const app = new Vue({
+  router
+}).$mount('#app')
