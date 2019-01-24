@@ -3,7 +3,7 @@
         A classe contain vem do projeto Netflix-Template-->
     <div class="contain">
         <div class="slider">
-            <h3>Ação</h3>
+            <teste titulo='Categoria'></teste>
             
             <!--Left Controll-->
             <span v-on:mouseover='scrollEsquerda' v-on:mouseout='clearScroll' class="handle handlePrev active">
@@ -121,8 +121,13 @@
 </template>
 
 <script>
+import teste from './componentes/teste.vue';
+
 export default {
     name: 'app',
+    components:{
+        teste
+    },
     data () {
         return {
             nome_projeto: 'Netflix Com Vue',
