@@ -19,42 +19,22 @@ export default {
     components:{
         Categoria
     },
+    beforeCreate() {
+        console.log('Before Create');
+    },
+    created() {
+        this.$http.get('http://localhost:3000/categorias').then(response => {
+            this.categorias = response.body;
+        });
+    },
+    beforeMount() {
+        console.log('BeforeMount');
+    },
     data () {
         return {
             nome_projeto: 'Netflix Com Vue',
             interval: null,
-            categorias:[
-                {
-                    "id":1,
-                    "titulo":"Terror",
-                    "filmes":[
-                        {
-                        "id":1,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
-                        },
-                        {
-                        "id":2,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
-                        },
-                        {
-                        "id":3,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
-                        },
-                        {
-                        "id":4,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
-                        },
-                        {
-                        "id":5,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
-                        },
-                        {
-                        "id":6,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
-                        },
-                        {
-                        "id":7,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
-                        },
-                        {
-                        "id":8,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
-                        }
-                    ]
-                }
-            ]
+            categorias:[]
         }
     }
 }
