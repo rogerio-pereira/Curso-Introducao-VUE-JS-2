@@ -2,8 +2,12 @@
     <!--Cada componente só pode ter um elemento, por isso é necessario essa div
         A classe contain vem do projeto Netflix-Template-->
     <div class="contain">
-        <categoria titulo='Comédia' ref='comedia'></categoria>
-        <categoria titulo='Suspense' ref='suspense'></categoria>
+        <categoria 
+            v-for='categoria in categorias' 
+            v-bind:key='categoria.id'
+            v-bind:titulo='categoria.titulo'
+            v-bind:filmes='categoria.filmes'
+        ></categoria>
     </div>
 </template>
 
@@ -18,7 +22,39 @@ export default {
     data () {
         return {
             nome_projeto: 'Netflix Com Vue',
-            interval: null
+            interval: null,
+            categorias:[
+                {
+                    "id":1,
+                    "titulo":"Terror",
+                    "filmes":[
+                        {
+                        "id":1,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
+                        },
+                        {
+                        "id":2,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
+                        },
+                        {
+                        "id":3,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
+                        },
+                        {
+                        "id":4,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
+                        },
+                        {
+                        "id":5,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
+                        },
+                        {
+                        "id":6,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
+                        },
+                        {
+                        "id":7,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
+                        },
+                        {
+                        "id":8,"titulo":"It: A Coisa","imagem":"http://br.web.img2.acsta.net/pictures/17/03/29/07/56/333222.jpg"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }
